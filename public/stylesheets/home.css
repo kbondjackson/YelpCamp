@@ -1,0 +1,30 @@
+body{
+    height: 100vh;
+    background-image:  linear-gradient(rgba(0,0,0,0.5), rgba(0.0.0.5)),
+    url("https://images.unsplash.com/photo-1529939590099-d031a925e483?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1030&q=80");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.btn-secondary{
+    background-color: white;
+    font-weight: 200;
+    border: white;
+    color: black;
+    text-shadow: none;
+    font-weight: 100;
+}
+
+.btn-secondary:hover{
+    background-color: black;
+    color: white;
+    border-bottom: 10px;
+    border-bottom-color: white ;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.Camp-title{
+    color: white;
+}
