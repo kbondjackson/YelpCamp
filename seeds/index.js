@@ -3,8 +3,10 @@ const mongoose = require('mongoose');
 const Campground = require('../models/campground');
 const cities = require('./cities');
 const { places, descriptors } = require('./seedHelpers');
+const dbUrl = process.env.DB_URL;
 
-mongoose.connect('mongodb://localhost:27017/yelp-camp');
+//'mongodb://localhost:27017/yelp-camp'
+mongoose.connect("mongodb+srv://kxbj94:Ht8DAf5ESqA7D8ka@cluster0.qflrles.mongodb.net/?retryWrites=true&w=majority");
 
 const db = mongoose.connection;
 db.on('error', console.log.bind(console, 'connection error:'));
@@ -19,7 +21,7 @@ const seedDB = async () => {
     for (let i = 0; i < 150; i++) {
         const rand1000 = Math.floor(Math.random() * 1000);
         const camp = new Campground({
-            author: '63d092ecb8af7346aa10da32',
+            author: '641dcfc45abce6d6f3c9388d',
             location: `${cities[rand1000].city}, ${cities[rand1000].state}`,
             title: `${sample(descriptors)} ${sample(places)}`,
             geometry: {
@@ -29,12 +31,12 @@ const seedDB = async () => {
             },
             images: [
                 {
-                    url: 'https://res.cloudinary.com/djsd8fiac/image/upload/v1676086815/YelpCamp/gdj1oohrit7aiiwhemyg.png',
-                    filename: 'YelpCamp/gdj1oohrit7aiiwhemyg',
+                    url: 'https://res.cloudinary.com/djsd8fiac/image/upload/v1675824847/samples/animals/three-dogs.jpg',
+                    filename: 'samples/animals/three-dogs',
                 },
                 {
-                    url: 'https://res.cloudinary.com/djsd8fiac/image/upload/v1676086819/YelpCamp/ssewzha299u1ee6qleuo.jpg',
-                    filename: 'YelpCamp/ssewzha299u1ee6qleuo',
+                    url: 'https://res.cloudinary.com/djsd8fiac/image/upload/v1677106246/YelpCamp/mazjbtv3pzemvnmd9rhj.jpg',
+                    filename: 'YelpCamp/mazjbtv3pzemvnmd9rhj.jpg',
                 }
             ],
             description: 'lorem does not work on strings for some reason and I do not care enough to figure it out now',
