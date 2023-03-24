@@ -28,6 +28,26 @@
                 integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
                 crossorigin="anonymous"></script>
 
+            <script>() => {
+                'use strict'
+            
+                // Fetch all the forms
+                const forms = document.querySelectorAll('.validated-form')
+            
+                // Loop over
+                Array.from(forms).forEach(form => {
+                    form.addEventListener('submit', event => {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+            
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+            }
+            </script>
+
 
 </body>
 
